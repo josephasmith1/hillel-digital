@@ -1,5 +1,4 @@
-import { Link as ScrollLink } from "react-scroll"; // Note: We might need to ensure this is used if we were using it before, but previous code imported Link from next/link. 
-// Actually, let's stick to the existing pattern. The existing code use Link from next/link with fragments.
+"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
