@@ -9,27 +9,31 @@ const pillars = [
     body: "The IHub actively collaborates with existing student organizations that align with its mission, such as TAMID at UCLA, which connects students with Israeli companies through consulting and investing experiences, and Tikkun Olam Makers (TOM), which fosters social impact through innovation and accessible product design. By partnering with these clubs, IHub amplifies their reach, provides shared programming opportunities, and facilitates cross-pollination of ideas and networks. At the same time, IHub encourages students to take initiative and launch new clubs or ventures related to Israeli innovation, offering mentorship, resources, and a supportive community to turn their ideas into reality.",
     icon: Users,
     imageSrc: "/images/pillar_students_1768583097062.png",
+    gradient: "from-tech-blue via-cyan-500 to-tech-blue",
   },
   {
     id: "startups",
     title: "Hosting Israeli Start Ups",
-    body: "A key component of the IHub is its role as a landing pad for Israeli founders looking to expand their start-ups into the U.S. market, particularly in the thriving Los Angeles innovation landscape. By hosting these entrepreneurs at UCLA or within the broader L.A. area, IHub creates unique opportunities for students to engage directly with founders who bring firsthand insight into Israel’s start-up ecosystem and the challenges of international growth. These founders serve as valuable resources—offering mentorship, speaking at campus events, and sharing real-world experiences that enrich students’ understanding of global entrepreneurship. Many also open doors to internships or job opportunities within their ventures.",
+    body: "A key component of the IHub is its role as a landing pad for Israeli founders looking to expand their start-ups into the U.S. market, particularly in the thriving Los Angeles innovation landscape. By hosting these entrepreneurs at UCLA or within the broader L.A. area, IHub creates unique opportunities for students to engage directly with founders who bring firsthand insight into Israel's start-up ecosystem and the challenges of international growth. These founders serve as valuable resources—offering mentorship, speaking at campus events, and sharing real-world experiences that enrich students' understanding of global entrepreneurship. Many also open doors to internships or job opportunities within their ventures.",
     icon: Rocket,
     imageSrc: "/images/pillar_startups_1768583110677.png",
+    gradient: "from-ucla-gold via-amber-500 to-ucla-gold",
   },
   {
     id: "programs",
     title: "Entrepreneurship Programs",
-    body: "The Israel Innovation & Entrepreneurship Hub (IHub) at UCLA Hillel offers students hands-on guidance in entrepreneurship, with a particular focus on transforming early-stage ideas into viable start-ups. Through curated workshops, mentorship, and direct connections with Israeli founders, IHub introduces students to the proven methodologies and entrepreneurial mindset that define Israel’s “Start-Up Nation.” Students receive tailored support in key areas of venture creation—such as ideation, business modeling, product development, and go-to-market strategies—while also gaining access to industry leaders and mentors.",
+    body: "The Israel Innovation & Entrepreneurship Hub (IHub) at UCLA Hillel offers students hands-on guidance in entrepreneurship, with a particular focus on transforming early-stage ideas into viable start-ups. Through curated workshops, mentorship, and direct connections with Israeli founders, IHub introduces students to the proven methodologies and entrepreneurial mindset that define Israel's "Start-Up Nation." Students receive tailored support in key areas of venture creation—such as ideation, business modeling, product development, and go-to-market strategies—while also gaining access to industry leaders and mentors.",
     icon: Lightbulb,
     imageSrc: "/images/pillar_entrepreneurship_1768583126749.png",
+    gradient: "from-tech-blue via-blue-400 to-cyan-500",
   },
   {
     id: "investments",
     title: "Promoting Investments in Israel",
-    body: "IHub at UCLA Hillel also fosters active investment in Israel by deepening ties to its start-up ecosystem and academic institutions. Through direct engagement with Israeli founders and exposure to Israel’s unique culture of innovation, IHub encourages students to see Israel as both a hub of opportunity and a partner for collaboration. Beyond business, IHub builds bridges to Israeli universities, tech accelerators, and social-impact ventures, cultivating lasting academic, professional, and cultural connections. In doing so, it inspires students to invest—intellectually, socially, and professionally—in strengthening the dynamic relationship between Israel and the global Jewish community.",
+    body: "IHub at UCLA Hillel also fosters active investment in Israel by deepening ties to its start-up ecosystem and academic institutions. Through direct engagement with Israeli founders and exposure to Israel's unique culture of innovation, IHub encourages students to see Israel as both a hub of opportunity and a partner for collaboration. Beyond business, IHub builds bridges to Israeli universities, tech accelerators, and social-impact ventures, cultivating lasting academic, professional, and cultural connections. In doing so, it inspires students to invest—intellectually, socially, and professionally—in strengthening the dynamic relationship between Israel and the global Jewish community.",
     icon: TrendingUp,
     imageSrc: "/images/pillar_investments_1768583141343.png",
+    gradient: "from-ucla-gold via-yellow-400 to-amber-500",
   },
 ];
 
@@ -78,7 +82,7 @@ export function PillarsSection() {
 
             {/* Text Side */}
             <div className="flex-1 space-y-6">
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900">
+              <h3 className={`text-3xl md:text-4xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r ${pillar.gradient}`}>
                 {pillar.title}
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
