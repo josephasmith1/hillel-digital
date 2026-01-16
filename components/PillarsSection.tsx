@@ -56,20 +56,20 @@ export function PillarsSection() {
                   className="object-cover"
                 />
                 {/* Label Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 z-10">
-                   <div className="relative w-full py-8 flex items-center justify-center">
+                <div className="absolute bottom-6 left-6 z-10 max-w-[85%]">
+                   <div className="relative inline-flex items-center justify-center px-12 py-6">
                      {/* Brush Stroke Background */}
                      <div 
-                       className="absolute inset-0 w-full h-full bg-no-repeat opacity-95"
+                       className="absolute inset-0 w-full h-full bg-no-repeat bg-center"
                        style={{ 
                          backgroundImage: "url('/images/brush-stroke.png')",
                          backgroundSize: "100% 100%" 
                        }}
                      />
                      
-                     <div className="relative flex items-center gap-3 z-10 px-4">
-                       <pillar.icon className="w-6 h-6 text-white" />
-                       <span className="font-semibold text-white tracking-wide text-center">{pillar.title}</span>
+                     <div className="relative flex items-center gap-3 z-10">
+                       <pillar.icon className="w-6 h-6 text-white shrink-0" />
+                       <span className="font-semibold text-white tracking-wide leading-tight">{pillar.title}</span>
                      </div>
                    </div>
                 </div>
