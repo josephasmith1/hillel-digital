@@ -3,13 +3,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-tech-blue: #3185c0;
+  --color-ucla-gold: #FEDD55;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-tech-blue: var(--color-tech-blue);
+  --color-ucla-gold: var(--color-ucla-gold);
+
+  /* Fonts */
+  --font-sans: var(--font-lexend-deca), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-heading: var(--font-veneer), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +29,22 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+/* Scroll margin for anchor links with fixed navbar */
+[id] {
+  scroll-margin-top: 6rem;
 }
