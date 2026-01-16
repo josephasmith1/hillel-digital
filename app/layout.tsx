@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lexend_Deca, Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 
 const lexendDeca = Lexend_Deca({
@@ -42,6 +43,10 @@ export default function RootLayout({
     >
       <body className="antialiased font-sans">
         {children}
+        <Script
+          src="https://widgets.givebutter.com/latest.umd.cjs?acct=HA0Mt2Iv8aiAyRog&p=other"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
