@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Users, Rocket, Lightbulb, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AnimatedText } from "./AnimatedText";
 
 const pillars = [
   {
@@ -22,7 +25,7 @@ const pillars = [
   {
     id: "programs",
     title: "Entrepreneurship Programs",
-    body: "The Israel Innovation & Entrepreneurship Hub (IHub) at UCLA Hillel offers students hands-on guidance in entrepreneurship, with a particular focus on transforming early-stage ideas into viable start-ups. Through curated workshops, mentorship, and direct connections with Israeli founders, IHub introduces students to the proven methodologies and entrepreneurial mindset that define Israel's "Start-Up Nation." Students receive tailored support in key areas of venture creation—such as ideation, business modeling, product development, and go-to-market strategies—while also gaining access to industry leaders and mentors.",
+    body: "The Israel Innovation & Entrepreneurship Hub (IHub) at UCLA Hillel offers students hands-on guidance in entrepreneurship, with a particular focus on transforming early-stage ideas into viable start-ups. Through curated workshops, mentorship, and direct connections with Israeli founders, IHub introduces students to the proven methodologies and entrepreneurial mindset that define Israel's 'Start-Up Nation.' Students receive tailored support in key areas of venture creation—such as ideation, business modeling, product development, and go-to-market strategies—while also gaining access to industry leaders and mentors.",
     icon: Lightbulb,
     imageSrc: "/images/pillar_entrepreneurship_1768583126749.png",
     gradient: "from-tech-blue via-blue-400 to-cyan-500",
@@ -83,7 +86,7 @@ export function PillarsSection() {
             {/* Text Side */}
             <div className="flex-1 space-y-6">
               <h3 className={`text-3xl md:text-4xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r ${pillar.gradient}`}>
-                {pillar.title}
+                <AnimatedText text={pillar.title} delay={0.2} />
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
                 {pillar.body}

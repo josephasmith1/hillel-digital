@@ -14,11 +14,11 @@ const backdropVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.3, ease: "easeOut" }
+    transition: { duration: 0.3, ease: "easeOut" as const }
   },
   exit: {
     opacity: 0,
-    transition: { duration: 0.2, ease: "easeIn", delay: 0.1 }
+    transition: { duration: 0.2, ease: "easeIn" as const, delay: 0.1 }
   }
 };
 
@@ -33,7 +33,7 @@ const modalVariants = {
     scale: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 25,
       stiffness: 300,
       delay: 0.1
@@ -43,7 +43,7 @@ const modalVariants = {
     opacity: 0,
     scale: 0.95,
     y: 20,
-    transition: { duration: 0.2, ease: "easeIn" }
+    transition: { duration: 0.2, ease: "easeIn" as const }
   }
 };
 
@@ -52,7 +52,7 @@ const contentVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: 0.2, duration: 0.3, ease: "easeOut" }
+    transition: { delay: 0.2, duration: 0.3, ease: "easeOut" as const }
   }
 };
 
@@ -170,17 +170,18 @@ export function DonateModal({ isOpen, onClose }: DonateModalProps) {
                   className={`transition-opacity duration-500 ${
                     widgetLoaded ? "opacity-100" : "opacity-0"
                   }`}
-                >
-                  <givebutter-giving-form
-                    id="j2YP2p"
-                    account="HA0Mt2Iv8aiAyRog"
-                    campaign="CJKPLN"
-                    theme-color="#187cb8"
-                    embed-url="https://givebutter.com/embed/c/CjkPLn"
-                    max-width="100%"
-                    show-goal-bar="false"
-                  ></givebutter-giving-form>
-                </div>
+                  dangerouslySetInnerHTML={{
+                    __html: `<givebutter-giving-form
+                      id="j2YP2p"
+                      account="HA0Mt2Iv8aiAyRog"
+                      campaign="CJKPLN"
+                      theme-color="#187cb8"
+                      embed-url="https://givebutter.com/embed/c/CjkPLn"
+                      max-width="100%"
+                      show-goal-bar="false"
+                    ></givebutter-giving-form>`
+                  }}
+                />
 
                 {/* Loading state */}
                 {!widgetLoaded && (
