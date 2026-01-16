@@ -45,6 +45,7 @@ h6 {
 }
 
 /* Scroll margin for anchor links with fixed navbar */
-[id] {
-  scroll-margin-top: 6rem;
+section[id],
+div[id] {
+  scroll-margin-top: 7rem;
 }
