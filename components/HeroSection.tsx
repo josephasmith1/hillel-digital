@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { DigitalBackground } from "./DigitalBackground";
 
 export function HeroSection() {
   return (
@@ -15,6 +16,9 @@ export function HeroSection() {
         />
         <div className="absolute inset-0 bg-tech-blue/60 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/20" /> {/* Extra dimming */}
+        
+        {/* Digital Particles Overlay */}
+        <DigitalBackground />
       </div>
 
       {/* Content */}
