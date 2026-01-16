@@ -7,10 +7,11 @@ import { cn } from "@/lib/utils";
 interface AnimatedTextProps {
   text: string;
   className?: string;
+  gradient?: string;
   delay?: number;
 }
 
-export function AnimatedText({ text, className, delay = 0 }: AnimatedTextProps) {
+export function AnimatedText({ text, className, gradient, delay = 0 }: AnimatedTextProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -31,7 +32,7 @@ export function AnimatedText({ text, className, delay = 0 }: AnimatedTextProps) 
     hidden: {
       opacity: 0,
       y: 20,
-      filter: "blur(10px)",
+      filter: "blur(8px)",
     },
     visible: {
       opacity: 1,
@@ -51,7 +52,11 @@ export function AnimatedText({ text, className, delay = 0 }: AnimatedTextProps) 
       variants={container}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className={cn("inline-flex flex-wrap", className)}
+      className={cn(
+        "inline-flex flex-wrap",
+        gradient && `text-transparent bg-clip-text bg-gradient-to-r ${gradient}`,
+        className
+      )}
       aria-label={text}
     >
       {letters.map((letter, index) => (
@@ -60,11 +65,9 @@ export function AnimatedText({ text, className, delay = 0 }: AnimatedTextProps) 
           variants={child}
           className={cn(
             "inline-block",
-            letter === " " ? "w-[0.25em]" : ""
+            letter === " " ? "w-[0.25em]" : "",
+            gradient && `text-transparent bg-clip-text bg-gradient-to-r ${gradient}`
           )}
-          style={{
-            textShadow: "0 0 20px currentColor",
-          }}
         >
           {letter === " " ? "\u00A0" : letter}
         </motion.span>

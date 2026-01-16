@@ -85,8 +85,8 @@ export function PillarsSection() {
 
             {/* Text Side */}
             <div className="flex-1 space-y-6">
-              <h3 className={`text-3xl md:text-4xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r ${pillar.gradient}`}>
-                <AnimatedText text={pillar.title} delay={0.2} />
+              <h3 className="text-3xl md:text-4xl font-heading font-bold">
+                <AnimatedText text={pillar.title} gradient={pillar.gradient} delay={0.2} />
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
                 {pillar.body}
